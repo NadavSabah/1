@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book store</title>
+</head>
+
+<body class="rtl" onload="onInit()">
+    <h1 data-trans="title">welcome</h1>
+    <section class="filter-container">
+        
+        <select onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+            <option value="ch">中國</option>
+        </select>
+<button data-trans="add-btn" type="button" class="btn btn-success" onclick="onAddAndRead_NewBook()">Add Book</button>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th data-trans="book-name" scope="col">Book Name</th>
+        <th data-trans="book-price" scope="col">Price$</th>
+        <th data-trans="book-dis" scope="col">Discription</th>
+        <th data-trans="book-action" scope="col">TakeAction</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+    </tbody>
+  </table>
+
+    <!-- Button trigger modal from bootstrap -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <p></p>         
+                </div>
+                <div class="modal-footer">
+                    <button data-trans="btn-close" type="button" class="btn-secondary" data-dismiss="modal">Close</button>
+                    <button onclick="decreaseRate()"type="button" class="btn btn-primary">-</button>
+                    <span  class="count">0</span>
+                    <button onclick="increaseRate()"type="button" class="btn btn-primary">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/service.js"></script>
+<script src="js/conroller.js"></script>
+<script src="js/i18nService.js"></script>
+
+</html>
